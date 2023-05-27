@@ -2,13 +2,16 @@ vim.g.mapleader = " "
 
 vim.cmd [[packadd packer.nvim]]
 
+local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
+vim.cmd.source(vimrc)
+
 require("plugins")
 require("remaps")
 require("treesitter")
 
-vim.cmd("nnoremap S :%s//g<Left><Left>")
-vim.cmd("set number")
-vim.cmd("colorscheme base16-onedark")
+-- vim.cmd("nnoremap S :%s//g<Left><Left>")
+-- vim.cmd("set number")
+-- vim.cmd("colorscheme base16-onedark")
 require('lualine').setup()
 
 ---lsp
